@@ -15,7 +15,7 @@ import io
 # ==========================================
 st.set_page_config(
     page_title="SKF - Dashboard Corporativo",
-    page_icon="assets/favicon.ico",
+    page_icon="favicon.ico",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -29,7 +29,7 @@ def get_base64_of_bin_file(bin_file):
     return base64.b64encode(data).decode()
 
 def apply_custom_css():
-    bg_path = r"assets\tecadi.png"
+    bg_path = r"tecadi.png"
     bg_css = ""
     if os.path.exists(bg_path):
         bg_base64 = get_base64_of_bin_file(bg_path)
@@ -199,7 +199,7 @@ def main():
 
     if not st.session_state.logado:
         # Puxa a imagem de fundo para o login
-        bg_path = r"assets\tecadi.png"
+        bg_path = r"tecadi.png"
         bg_css = ""
         if os.path.exists(bg_path):
             bg_base64 = get_base64_of_bin_file(bg_path)
@@ -269,7 +269,7 @@ def main():
             st.markdown("<div class='login-box'>", unsafe_allow_html=True)
             
             # Logo Tecadi no Login
-            logo_path = r"assets\logosemfundotecadai.png"
+            logo_path = r"logosemfundotecadai.png"
             if os.path.exists(logo_path):
                 logo_b64 = get_base64_of_bin_file(logo_path)
                 st.markdown(f'<img src="data:image/png;base64,{logo_b64}" width="220" style="margin-bottom: 20px;">', unsafe_allow_html=True)
@@ -316,7 +316,7 @@ def main():
 
     # --- NAVEGAÇÃO E SIDEBAR ---
     with st.sidebar:
-        logo = r"assets\logosemfundotecadi.png"
+        logo = r"logosemfundotecadi.png"
         if os.path.exists(logo): st.image(logo, use_container_width=True)
         st.markdown("<br>", unsafe_allow_html=True)
         
